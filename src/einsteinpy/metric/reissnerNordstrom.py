@@ -197,7 +197,7 @@ class ReissnerNordstrom:
                         v[2] * u.rad,
                         v[3] * u.rad,
                         v[5] * u.m / u.s,
-                        v[6] * u.rad / u.s,
+                        v[6] * u.rad / u.s, 
                         v[7] * u.rad / u.s,
                         self.a,
                     )

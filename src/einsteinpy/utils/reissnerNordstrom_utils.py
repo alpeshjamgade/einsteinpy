@@ -241,18 +241,11 @@ def maxwell_tensor_covariant(
 
     """
     c2 = c ** 2
+    r2 = r ** 2
     m = np.zeros((4, 4), dtype=float)
     # set the tensor terms
-    m[0, 1] = ((-rq) / (rh2 ** 2)) * (rh2 - drh2dr * r)
-    m[0, 2] = r * rq * drh2dth / (rh2 ** 2)
-    m[3, 1] = (c2 * a * rq * (np.sin(theta) ** 2) / (G * M * (rh2 ** 2))) * (
-        rh2 - r * drh2dr
-    )
-    m[3, 2] = (c2 * a * rq * r / (G * M * (rh2 ** 2))) * (
-        (2 * np.sin(theta) * np.cos(theta) * rh2) - (drh2dth * (np.sin(theta) ** 2))
-    )
-    for i, j in [(0, 1), (0, 2), (3, 1), (3, 2)]:
-        m[j, i] = -m[i, j]
+    m[0, 1] = -Q/(np.sqrt(2) * r2)
+    m[2, 1] = Q/(np.sqrt(2)*r2)
     return m
 
 
@@ -291,8 +284,8 @@ def maxwell_tensor_contravariant(
         Numpy array of shape (4,4)
 
     """
-    mcov = maxwell_tensor_covariant(r, theta, a, Q, M, c, G, Cc)
-    ginv = metric_inv(r, theta, M, a, Q, c, G, Cc)
+    mcov = maxwell_tensor_covariant(r, theta Q, M, c, G, Cc)
+    ginv = metric_inv(r, theta, M, Q, c, G, Cc)
     # contravariant F = contravariant g X covariant F X transpose(contravariant g)
     # but g is symettric
     return np.matmul(np.matmul(ginv, mcov), ginv)

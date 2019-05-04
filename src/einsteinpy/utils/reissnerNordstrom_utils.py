@@ -37,7 +37,7 @@ def metric(
     Cc=constant.coulombs_const.value,
 ):
     """
-    Returns the Kerr-Newman Metric
+    Returns the Reissner-Nordstrom Metric
 
     Parameters
     ----------
@@ -85,7 +85,7 @@ def metric_inv(
     Cc=constant.coulombs_const.value,
 ):
     """
-    Returns the inverse of Kerr-Newman Metric
+    Returns the inverse of Reissner-Nordstrom Metric
 
     Parameters
     ----------
@@ -123,7 +123,7 @@ def christoffels(
     Cc=constant.coulombs_const.value,
 ):
     """
-    Returns the 3rd rank Tensor containing Christoffel Symbols for Kerr-Newman Metric
+    Returns the 3rd rank Tensor containing Christoffel Symbols for Reissner-Nordstrom Metric
 
     Parameters
     ----------
@@ -175,7 +175,7 @@ def em_potential(
     Cc=constant.coulombs_const.value,
 ):
     """
-    Returns a 4-d vector(for each component of 4-d space-time) containing the electromagnetic potential around a Kerr-Newman body
+    Returns a 4-d vector(for each component of 4-d space-time) containing the electromagnetic potential around a Reissner-Nordstrom body
 
     Parameters
     ----------
@@ -215,7 +215,7 @@ def maxwell_tensor_covariant(
     Cc=constant.coulombs_const.value,
 ):
     """
-    Returns a 2nd rank Tensor containing Maxwell Tensor with lower indices for Kerr-Newman Metric
+    Returns a 2nd rank Tensor containing Maxwell Tensor with lower indices for Riessner-Nordstrom Metric
 
     Parameters
     ----------
